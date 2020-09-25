@@ -85,5 +85,8 @@ Encore
 //        }
 //    ))
     ;
-
-module.exports = Encore.getWebpackConfig();
+var config = Encore.getWebpackConfig();
+config.watchOptions = {
+    poll: true,
+};
+module.exports = config;
