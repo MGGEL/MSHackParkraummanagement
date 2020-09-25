@@ -6,11 +6,12 @@ use App\Entity\Parkplatz;
 use App\Repository\ParkplatzRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Energielenker\LoraBundle\Entity\Device;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-class DefaultController
+class DefaultController extends AbstractController
 {
     private $parkplatzRepository;
     private $entityManager;
@@ -37,10 +38,11 @@ class DefaultController
                 $liste .= 'frei ';
             }
             $liste .= '(letzte Meldung: '.$parkplatz->getLetzteMeldung()->format('d.m.Y H:i:s').')<br>';
-            return new Response(
-                '<html><body>'.$liste.'</body></html>'
-            );
+
         }
+        return $this->render('Default/index.html.twig', [
+            'liste' => $liste
+        ]);
     }
 
     public function WebhookAction(Request $request){

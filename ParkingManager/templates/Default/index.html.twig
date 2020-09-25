@@ -1,6 +1,11 @@
 {% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    {{ encore_entry_link_tags('app') }}
+{% endblock %}
 {% block body %}
-    {{ number }}
+    {{ liste }}
+    test
 {% endblock %}
 
 {% block javascripts %}
