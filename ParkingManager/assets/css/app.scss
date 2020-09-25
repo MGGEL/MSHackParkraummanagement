@@ -1,3 +1,9 @@
-body {
-  background-color: red;
-}
+// Fontawesome 5
+@import "../font-awesome5/scss/fontawesome";
+@import "../font-awesome5/scss/regular";
+@import "../font-awesome5/scss/solid";
+@import "../font-awesome5/scss/brands";
+
+// Bootstrap 4.5 komplett
+@import "~bootstrap";
+
