@@ -1,5 +1,5 @@
-# Requirement
-- docker locally
+# Requirements
+- Docker
 - PHP 7.4 CLI
 - composer
 
@@ -20,4 +20,4 @@ cd ..
 docker-compose up -d
 ````
 
-Now you have a html Server avaiable at http://localhost/
+Now you have a html Server avaiable at http://localhost:8080/
