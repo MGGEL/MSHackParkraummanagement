@@ -54,3 +54,4 @@
 #docker
 /docker/data/db/*
 !docker/data/db/.gitkeep
+.idea/*
