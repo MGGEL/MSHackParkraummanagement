@@ -1,1 +1,1 @@
-docker/web/*.sh eol=lf
+/docker/web/*.sh eol=lf
