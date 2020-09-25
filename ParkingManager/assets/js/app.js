@@ -1,9 +1,9 @@
-require('../css/parkingManager.css');
+require('../css/app.scss');
 
 class App {
 
     constructor() {
-        console.log('test');
+        console.log('test', 1);
     }
 
 }
