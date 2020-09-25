@@ -2,16 +2,70 @@
 
 namespace App\Controller;
 
+use App\Entity\Parkplatz;
+use App\Repository\ParkplatzRepository;
+use Doctrine\ORM\EntityManagerInterface;
+use Energielenker\LoraBundle\Entity\Device;
+use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-class DefaultController 
+class DefaultController
 {
+    private $parkplatzRepository;
+    private $entityManager;
+
+    public function __construct(ParkplatzRepository $parkplatzRepository,
+                                EntityManagerInterface $entityManager)
+    {
+        $this->parkplatzRepository = $parkplatzRepository;
+        $this->entityManager = $entityManager;
+    }
+
     public function index(): Response
     {
-        $number = random_int(0, 100);
+        $parkplaetze = $this->parkplatzRepository->findAll();
 
-        return new Response(
-            '<html><body>Lucky number: '.$number.'</body></html>'
-        );
+        $liste = '';
+
+        foreach ($parkplaetze as $parkplatz) {
+            $liste .= $parkplatz->getDeviceName().': ';
+            if ($parkplatz->isBesetzt()) {
+                $liste .= 'besetzt ';
+            }
+            else {
+                $liste .= 'frei ';
+            }
+            $liste .= '(letzte Meldung: '.$parkplatz->getLetzteMeldung()->format('d.m.Y H:i:s').')<br>';
+            return new Response(
+                '<html><body>'.$liste.'</body></html>'
+            );
+        }
+    }
+
+    public function WebhookAction(Request $request){
+        $json = $request->getContent();
+        $content = json_decode($json);
+
+        if ( null === ($parkplatz = $this->parkplatzRepository->findOneBy(['deviceName' => $content->deviceName]))) {
+            $parkplatz = new Parkplatz();
+            $parkplatz->setDeviceName($content->deviceName);
+        }
+        $parkplatz->setBesetzt((bool)$this->decode($content->data));
+        $parkplatz->setLetzteMeldung(new \DateTime());
+        $this->entityManager->persist($parkplatz);
+        $this->entityManager->flush();
+
+
+        return new JsonResponse('Success.', 200);
+    }
+
+    private function decode(string $data): string
+    {
+        $binary = base64_decode($data);
+
+        $byteArray = str_split($binary, 1);
+
+        return $byteArray[0];
     }
 }
