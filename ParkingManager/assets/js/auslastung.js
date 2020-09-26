@@ -1,6 +1,7 @@
 Highcharts.chart('container', {
     chart: {
-        type: 'column'
+        type: 'column',
+        height: '350px'
     },
     credits: {
         enabled: false
@@ -66,8 +67,10 @@ Highcharts.chart('container', {
 
 Highcharts.chart('container2', {
     chart: {
-        type: 'column'
+        type: 'column',
+        height: '350px'
     },
+
     credits: {
         enabled: false
     },

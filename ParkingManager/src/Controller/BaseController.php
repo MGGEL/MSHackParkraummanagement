@@ -14,7 +14,10 @@ class BaseController extends AbstractController
         $route = $request->get('_route');
 
         $links = [
-            'dashboard' => $this->createNavEntry('dashboard_show', 'Dashboard', $route === 'dashboard_show')
+            'dashboard' => $this->createNavEntry('dashboard_show', 'Dashboard', $route === 'dashboard_show'),
+            'auslastung' => $this->createNavEntry('auslastung', 'Auslastung', $route === 'auslastung'),
+            'heatmap' => $this->createNavEntry('heatmap', 'Frequentierung', $route === 'heatmap'),
+            'umsatz' => $this->createNavEntry('umsatz', 'Umsatz', $route === 'umsatz'),
         ];
 
         $template_parameters['navLinks'] = $links;
