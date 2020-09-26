@@ -5,13 +5,11 @@ namespace App\Controller;
 use App\Entity\Parkplatz;
 use App\Repository\ParkplatzRepository;
 use Doctrine\ORM\EntityManagerInterface;
-use Energielenker\LoraBundle\Entity\Device;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-class DefaultController extends AbstractController
+class DefaultController extends BaseController
 {
     private $parkplatzRepository;
     private $entityManager;
@@ -23,7 +21,7 @@ class DefaultController extends AbstractController
         $this->entityManager = $entityManager;
     }
 
-    public function index(): Response
+    public function index(Request $request): Response
     {
         $parkplaetze = $this->parkplatzRepository->findAll();
 
@@ -40,9 +38,10 @@ class DefaultController extends AbstractController
             $liste .= '(letzte Meldung: '.$parkplatz->getLetzteMeldung()->format('d.m.Y H:i:s').')<br>';
 
         }
-        return $this->render('Default/index.html.twig', [
+
+        return $this->render('Default/index.html.twig', $this->addNavMenuData($request, [
             'liste' => $liste
-        ]);
+        ]));
     }
 
     public function WebhookAction(Request $request){

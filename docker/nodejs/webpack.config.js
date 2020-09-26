@@ -27,6 +27,8 @@ Encore
      */
     .addEntry('app', './assets/js/app.js')
     .addEntry('dashboard', './assets/js/dashboard.js')
+    .addEntry('auslastung', './assets/js/auslastung.js')
+    .addEntry('heatmap', './assets/js/heatmap.js')
 
     // When enabled, Webpack "splits" your files into smaller pieces for greater optimization.
     // .splitEntryChunks()
@@ -79,7 +81,7 @@ Encore
     // add Plugins here
     .addPlugin(new CopyWebpackPlugin({
         patterns: [
-//                {from: './assets/static',              to: 'static', force: true},
+                {from: './assets/static',              to: 'static', force: true},
                 {from: './assets/css',                 to: 'css', force: true},
                 {from: './assets/font-awesome5/fonts', to: 'fonts', force: true}
             ]
