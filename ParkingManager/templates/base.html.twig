@@ -8,9 +8,13 @@
     <body>
         <nav id="vertical-nav">
             <ul>
-                <li>
-                    <a href="/dashboard">Dashboard</a>
-                </li>
+                {% for entry in navLinks %}
+                    <li{% if entry.active %} class="active"{% endif %}>
+                        <a href="{{ entry.url }}">
+                            {{ entry.caption }}
+                        </a>
+                    </li>
+                {% endfor %}
             </ul>
         </nav>
         <div class="container-fluid" id="content-holder">

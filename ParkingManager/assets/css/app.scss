@@ -28,12 +28,18 @@ body:after {
 
 	a:hover {
 		color: #dedede;
+		text-decoration: none;
 	}
 
 	ul {
 		list-style: none;
 		margin: 0;
-		padding: 0.5em ;
+		padding: 0;
+
+		li.active {
+			padding: 0.5em;
+			background-color: #85b7dd;
+		}
 	}
 }
 
