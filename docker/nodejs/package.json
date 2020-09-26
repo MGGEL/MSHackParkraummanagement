@@ -21,6 +21,7 @@
 
     "dependencies": {
         "bootstrap": "4.5.*",
+        "popper.js": "^1.16.1-lts",
         "highcharts": "^7.0.1",
         "font-awesome": "4",
         "jquery": "3.5.*",
