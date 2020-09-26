@@ -21,7 +21,9 @@ document.addEventListener('DOMContentLoaded', function () {
         {lat: 51.964525, lng: 7.632045},
         {lat: 51.963937, lng: 7.632206},
         {lat: 51.961137, lng: 7.630178},
-        {lat: 51.960857, lng: 7.630092}
+        {lat: 51.960857, lng: 7.630092},
+        {lat: 51.949955, lng: 7.636715},
+        {lat: 51.951105, lng: 7.637412}
     ];
 
     let markers = positions.map(function(position, i) {
@@ -33,6 +35,38 @@ document.addEventListener('DOMContentLoaded', function () {
 
     var markerCluster = new MarkerClusterer(map, markers,
         {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
+
+    let $workload = $('#workload');
+    let count = 0;
+    window.setInterval(function () {
+        let number = parseInt($workload.html());
+
+        if (count !== 0) {
+            if (count % 5 === 0) {
+                number-= 1;
+            }
+
+            if (count % 8 === 0) {
+                number+= 2;
+            }
+
+            if (count % 3 === 0) {
+                number+= 1;
+            }
+        }
+
+        if (number > 100) {
+            number = 95;
+        }
+
+        if (number <= 0) {
+            number = 10;
+        }
+
+        $workload.html(number);
+
+        count++;
+    }, 1500);
 
 });
 

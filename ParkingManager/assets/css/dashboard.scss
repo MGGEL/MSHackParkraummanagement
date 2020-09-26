@@ -6,10 +6,10 @@
     border: 1px silver solid;
     border-radius: 15px;
     width: 100%;
-    height: 400px;
+//    height: 400px;
     margin-top: 25px;
     text-align: center;
-    padding-top: 150px;
+    padding: 25px;
     font-size: 20px;
 }
 
@@ -28,4 +28,8 @@
 .wert {
     font-weight: bolder;
     font-size: 30px;
+}
+
+.big-number {
+    font-size: 5em;
 }
