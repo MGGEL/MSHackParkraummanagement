@@ -2,13 +2,32 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <title>Münster: parkMe{% block title %}{% endblock %}</title>
         {% block stylesheets %}{% endblock %}
     </head>
     <body>
-        <div class="container">
-            {% block body %}{% endblock %}
+        <nav id="vertical-nav">
+            <ul>
+                <li>
+                    <a href="/dashboard">Dashboard</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="container-fluid" id="content-holder">
+            <header id="page-header">
+                <h1>Münster: parkMe</h1>
+
+                <nav id="top-right-nav">
+                    <a href="#">
+                        <i class="fa fa-user"></i>
+                    </a>
+                </nav>
+            </header>
+            <div id="content">
+                {% block body %}{% endblock %}
+            </div>
         </div>
+
         {% block javascripts %}{% endblock %}
     </body>
 </html>

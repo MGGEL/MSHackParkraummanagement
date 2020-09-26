@@ -7,3 +7,49 @@
 // Bootstrap 4.5 komplett
 @import "~bootstrap";
 
+html,
+body {
+  	height: 100%;
+}
+body:after {
+	clear: both;
+}
+
+#vertical-nav {
+	height: 100%;
+	float: left;
+	background-color: #009FE3;
+
+	a,
+	a:active,
+	a:visited {
+		color: #FFFFFF;
+	}
+
+	a:hover {
+		color: #dedede;
+	}
+
+	ul {
+		list-style: none;
+		margin: 0;
+		padding: 0.5em ;
+	}
+}
+
+#content-holder {
+	height: 100%;
+	padding-left: 7em;
+
+	#page-header {
+		position: relative;
+		padding: 1em 0em;
+
+		#top-right-nav {
+			position: absolute;
+			top:  1em;
+			right: 1em;
+			z-index: 2;
+		}
+	}
+}
