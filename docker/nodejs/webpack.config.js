@@ -81,7 +81,7 @@ Encore
     // add Plugins here
     .addPlugin(new CopyWebpackPlugin({
         patterns: [
-//                {from: './assets/static',              to: 'static', force: true},
+                {from: './assets/static',              to: 'static', force: true},
                 {from: './assets/css',                 to: 'css', force: true},
                 {from: './assets/font-awesome5/fonts', to: 'fonts', force: true}
             ]

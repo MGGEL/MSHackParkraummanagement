@@ -2,13 +2,55 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <title>Münster: parkMe{% block title %}{% endblock %}</title>
         {% block stylesheets %}{% endblock %}
     </head>
     <body>
-        <div class="container">
-            {% block body %}{% endblock %}
+        <nav id="vertical-nav">
+            <div id="logos">
+                <a id="el-logo" href="https://energielenker-solutions.de/">
+                    <img
+                            class="img-fluid"
+                            src="{{ asset ('/build/static/images/logoEL.png') }}"
+                            alt="energielenker solutions"
+                            title="energielenker solutions"
+                    >
+                </a>
+                <a id="mshack-logo" href="http://www.muensterhack.de/">
+                    <img
+                            class="img-fluid"
+                            src="{{ asset ('/build/static/images/logo_muensterhack_header.png') }}"
+                            alt="Münsterhack 2020"
+                            title="Münsterhack 2020"
+                    >
+                </a>
+            </div>
+
+            <ul>
+                {% for entry in navLinks %}
+                    <li{% if entry.active %} class="active"{% endif %}>
+                        <a href="{{ entry.url }}">
+                            {{ entry.caption }}
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </nav>
+        <div class="container-fluid" id="content-holder">
+            <header id="page-header">
+                <h1>Münster: parkMe</h1>
+
+                <nav id="top-right-nav">
+                    <a href="#">
+                        <i class="fa fa-user"></i>
+                    </a>
+                </nav>
+            </header>
+            <div id="content">
+                {% block body %}{% endblock %}
+            </div>
         </div>
+
         {% block javascripts %}{% endblock %}
     </body>
 </html>
