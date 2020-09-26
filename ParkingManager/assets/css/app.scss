@@ -71,13 +71,27 @@ body:after {
 #content-holder {
 	height: 100%;
 	padding-left: 13.5em;
+	position: relative;
+
+	#content {
+		padding-top: 119px;
+
+		#content-scroll {
+			height: calc(100vh - 119px);
+			overflow: auto;
+		}
+	}
 
 	#page-header {
-		position: relative;
+		position: absolute;
 		padding: 26px 0;
 		background-color: $blue;
 		color: #FFFFFF;
 		margin-left: -1em;
+		top: 0;
+		right: 0;
+		left: 213px;
+		z-index: 3;
 
 		h1 {
 			margin-left: 0.5em;
@@ -85,12 +99,12 @@ body:after {
 
 		#top-right-nav {
 			position: absolute;
-			top:  2.1em;
+			top:  2.4em;
 			right: 1em;
 			z-index: 2;
 
 			a {
-				color: #000000;
+				color: #FFFFFF;
 			}
 		}
 	}

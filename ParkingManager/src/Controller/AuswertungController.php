@@ -2,14 +2,12 @@
 
 namespace App\Controller;
 
-use App\Entity\Parkplatz;
 use App\Repository\ParkplatzRepository;
 use Doctrine\ORM\EntityManagerInterface;
-use Energielenker\LoraBundle\Entity\Device;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-class AuswertungController extends AbstractController
+class AuswertungController extends BaseController
 {
     private $parkplatzRepository;
     private $entityManager;
@@ -21,16 +19,21 @@ class AuswertungController extends AbstractController
         $this->entityManager = $entityManager;
     }
 
-    public function Auslastung(): Response
+    public function Auslastung(Request $request): Response
     {
 
-        return $this->render('Default/auslastung.twig');
+        return $this->render('Default/auslastung.twig', $this->addNavMenuData($request));
     }
 
-    public function Heatmap(): Response
+    public function Heatmap(Request $request): Response
     {
 
-        return $this->render('Default/heatmap.twig');
+        return $this->render('Default/heatmap.twig', $this->addNavMenuData($request));
     }
 
+    public function Umsatz(Request $request): Response
+    {
+
+        return $this->render('Default/umsatz.twig', $this->addNavMenuData($request));
+    }
 }

@@ -17,3 +17,7 @@ auslastung:
 heatmap:
     path: /heatmap
     controller: App\Controller\AuswertungController::Heatmap
+
+umsatz:
+    path: /umsatz
+    controller: App\Controller\AuswertungController::Umsatz

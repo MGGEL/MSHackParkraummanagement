@@ -29,14 +29,21 @@
                     </select>
                 </label>
             </div>
-
+            <label>Parkplatztyp:
+                <select name="top5">
+                    <option selected="selected">Gesamt</option>
+                    <option>Kostenpflichtige Parkplätze</option>
+                    <option>Anwohner Parkplätze</option>
+                    <option>Behindertenparkplätze</option>
+                    <option>E-Ladesäulen</option>
+                </select>
+            </label>
             <figure class="highcharts-figure">
                 <div id="heatmap"></div>
             </figure>
 
         </div>
     </div>
-
 
 <pre id="csv" style="display: none">Date,Time,Temperature
 2017-01-01,0,2.7
