@@ -5,10 +5,62 @@
 {% endblock %}
 
 {% block body %}
-
-    <h1>Münster:parkme</h1>
-    <div class="row">
+    <div class="row oben">
         <div class="col-md-8" id="map"></div>
+        <div class="col-md-4 tabelle">
+            <h3>Meldungen</h3>
+            <table class="table table-stripped">
+                <thead>
+                    <tr><th>Parkplatz</th><th>Nr</th><th>Verstoß</th></tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Parkhaus Alter Steinweg</td>
+                        <td>23</td>
+                        <td>Zeitüberschreitung (2h 12min)</td>
+                    </tr>
+                    <tr>
+                        <td>Schlossplatz Süd</td>
+                        <td>12</td>
+                        <td>Zeitüberschreitung (50min)</td>
+                    </tr>
+                    <tr>
+                        <td>Aegidiimarkt 1-7, 48143 Münster</td>
+                        <td>10</td>
+                        <td>im Parkverbot</td>
+                    </tr>
+                    <tr>
+                        <td><a>Ritterstraße 38, 48143 Münster</td>
+                        <td>5</td>
+                        <td>im Parkverbot</td>
+                    </tr>
+                    <tr>
+                        <td><a>Parkhaus Theater Münster</a></td>
+                        <td>44</td>
+                        <td>Zeitüberschreitung (1h 20min)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="abschnitt">
+                akt. Auslastung: <br>
+                [75%]
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="abschnitt">
+                5 Falschparker aktuell
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="abschnitt">
+                Einkommen durch Falschparker: <br>
+                [85€]
+            </div>
+        </div>
     </div>
 {% endblock %}
 

@@ -3,6 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <title>Münster: parkMe{% block title %}{% endblock %}</title>
+        <link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
         {{ encore_entry_link_tags('app') }}
         {% block stylesheets %}{% endblock %}
     </head>
@@ -37,18 +38,21 @@
                 {% endfor %}
             </ul>
         </nav>
-        <div class="container-fluid" id="content-holder">
+        <div id="content-holder">
             <header id="page-header">
-                <h1>Münster: parkMe</h1>
+                <h1>Münster:parkme</h1>
 
                 <nav id="top-right-nav">
                     <a href="#">
-                        <i class="fa fa-user"></i>
+                        <i class="fa fa-user fa-2x"></i>
                     </a>
                 </nav>
             </header>
             <div id="content">
-                {% block body %}{% endblock %}
+                <div class="container-fluid" id="content-scroll">
+                    {% block body %}{% endblock %}
+                </div>
+
             </div>
         </div>
         {{ encore_entry_script_tags('app') }}
