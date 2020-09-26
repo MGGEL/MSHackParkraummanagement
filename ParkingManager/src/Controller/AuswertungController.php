@@ -27,4 +27,10 @@ class AuswertungController extends AbstractController
         return $this->render('Default/auslastung.twig');
     }
 
+    public function Heatmap(): Response
+    {
+
+        return $this->render('Default/heatmap.twig');
+    }
+
 }

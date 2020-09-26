@@ -13,3 +13,7 @@ dashboard_show:
 auslastung:
     path: /auslastung
     controller: App\Controller\AuswertungController::Auslastung
+
+heatmap:
+    path: /heatmap
+    controller: App\Controller\AuswertungController::Heatmap
