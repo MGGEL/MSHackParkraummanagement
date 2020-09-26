@@ -17,7 +17,7 @@ class BaseController extends AbstractController
             'dashboard' => $this->createNavEntry('dashboard_show', 'Dashboard', $route === 'dashboard_show'),
             'auslastung' => $this->createNavEntry('auslastung', 'Auslastung', $route === 'auslastung'),
             'heatmap' => $this->createNavEntry('heatmap', 'Frequentierung', $route === 'heatmap'),
-            'umsatz' => $this->createNavEntry('umsatz', 'Umsatz', $route === 'umsatz'),
+            'umsatz' => $this->createNavEntry('umsatz', 'Einnahmen', $route === 'umsatz'),
         ];
 
         $template_parameters['navLinks'] = $links;

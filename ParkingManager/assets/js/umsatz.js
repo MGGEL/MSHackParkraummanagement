@@ -6,7 +6,7 @@
                 enabled: false
             },
             title: {
-                text: 'Umsatz Falschparker'
+                text: 'Einnahmen durch Falschparker'
             },
             xAxis: {
                 type: 'datetime',
