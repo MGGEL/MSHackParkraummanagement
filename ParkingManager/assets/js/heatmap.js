@@ -4,6 +4,7 @@ Highcharts.chart('heatmap', {
     data: {
         csv: document.getElementById('csv').innerHTML
     },
+    height: '600px',
     credits: {
         enabled: false
     },
