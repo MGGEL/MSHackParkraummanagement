@@ -7,9 +7,11 @@
 // Bootstrap 4.5 komplett
 @import "~bootstrap";
 
+$blue: #009FE3;
 html,
 body {
   	height: 100%;
+	font-family: 'Lato';
 }
 body:after {
 	clear: both;
@@ -18,7 +20,7 @@ body:after {
 #vertical-nav {
 	height: 100%;
 	float: left;
-	background-color: #009FE3;
+	background-color: $blue;
 	max-width: 13%;
 
 	a,
@@ -37,8 +39,11 @@ body:after {
 		margin: 0;
 		padding: 0;
 
-		li.active {
+		li {
 			padding: 0.5em;
+		}
+
+		li.active {
 			background-color: #85b7dd;
 		}
 	}
@@ -69,13 +74,24 @@ body:after {
 
 	#page-header {
 		position: relative;
-		padding: 1em 0em;
+		padding: 26px 0;
+		background-color: $blue;
+		color: #FFFFFF;
+		margin-left: -1em;
+
+		h1 {
+			margin-left: 0.5em;
+		}
 
 		#top-right-nav {
 			position: absolute;
-			top:  1em;
+			top:  2.1em;
 			right: 1em;
 			z-index: 2;
+
+			a {
+				color: #000000;
+			}
 		}
 	}
 }
