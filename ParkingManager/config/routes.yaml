@@ -6,3 +6,7 @@ webhook:
     path: /webhook
     controller: App\Controller\DefaultController::WebhookAction
 
+dashboard_show:
+    path: /dashboard
+    controller: App\Controller\DashboardController::show
+
