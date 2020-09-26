@@ -39,9 +39,7 @@ class DefaultController extends BaseController
 
         }
 
-        return $this->render('Default/index.html.twig', $this->addNavMenuData($request, [
-            'liste' => $liste
-        ]));
+        return $this->redirectToRoute('dashboard_show');
     }
 
     public function WebhookAction(Request $request){

@@ -20,7 +20,7 @@ COPY php.ini /usr/local/etc/php/php.ini
 COPY apache.conf /etc/apache2/sites-available/000-default.conf
 
 COPY install_composer.sh /install_composer.sh
-RUN /install_composer.sh
+RUN chmod +x /install_composer.sh && /install_composer.sh
 
 
 
