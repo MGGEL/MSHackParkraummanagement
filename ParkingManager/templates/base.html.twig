@@ -7,6 +7,25 @@
     </head>
     <body>
         <nav id="vertical-nav">
+            <div id="logos">
+                <a id="el-logo" href="https://energielenker-solutions.de/">
+                    <img
+                            class="img-fluid"
+                            src="{{ asset ('/build/static/images/logoEL.png') }}"
+                            alt="energielenker solutions"
+                            title="energielenker solutions"
+                    >
+                </a>
+                <a id="mshack-logo" href="http://www.muensterhack.de/">
+                    <img
+                            class="img-fluid"
+                            src="{{ asset ('/build/static/images/logo_muensterhack_header.png') }}"
+                            alt="Münsterhack 2020"
+                            title="Münsterhack 2020"
+                    >
+                </a>
+            </div>
+
             <ul>
                 {% for entry in navLinks %}
                     <li{% if entry.active %} class="active"{% endif %}>

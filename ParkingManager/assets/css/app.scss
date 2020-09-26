@@ -19,6 +19,7 @@ body:after {
 	height: 100%;
 	float: left;
 	background-color: #009FE3;
+	max-width: 13%;
 
 	a,
 	a:active,
@@ -41,11 +42,30 @@ body:after {
 			background-color: #85b7dd;
 		}
 	}
+
+	#logos {
+		background-color: #FFFFFF;
+		padding: 0.5em;
+	}
+
+	#el-logo {
+		display: block;
+	}
+
+	#mshack-logo {
+		display: block;
+		text-align: center;
+		padding-top: 0.5em;
+	}
+
+	#mshack-logo img {
+		width: 51%;
+	}
 }
 
 #content-holder {
 	height: 100%;
-	padding-left: 7em;
+	padding-left: 13.5em;
 
 	#page-header {
 		position: relative;
